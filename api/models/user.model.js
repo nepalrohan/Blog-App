@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
 
     profilePicture:{
       type:String,
-      default:'',
+      default:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8AJM9wkP__z2M-hovSAWcTb_9XJ6smy3NKw&s',
       
     }
   },
