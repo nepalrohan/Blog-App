@@ -20,7 +20,7 @@ const tabFromUrl = urlParams.get('tab')
         {/* Sidebar */}
         <DashboardSidebar/>
       </div>
-      <div>
+      <div className="w-full">
 {/* Right side page */}
 
 {
