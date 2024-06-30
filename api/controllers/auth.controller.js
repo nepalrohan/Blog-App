@@ -50,9 +50,10 @@ export const signin = async (req, res, next) => {
       return next(errorHandler(400, "Invalid Credientials"));
     }
     const token = jwt.sign(
-      {
-        id: validuser._id,
-      },
+      
+       { id: validuser._id},
+        { expiresIn: '1h' },
+      
       process.env.JWT_SECRET
     );
     const { password: pass, ...rest } = validuser._doc;
@@ -72,7 +73,7 @@ export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+      const token = jwt.sign({ id: user._id },{ expiresIn: '1h' }, process.env.JWT_SECRET);
       const { password, ...rest } = user._doc;
       res
         .status(200)
