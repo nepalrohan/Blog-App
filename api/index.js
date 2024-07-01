@@ -2,11 +2,13 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 dotenv.config();
 const app = express();
 import userRoutes from './routes/user.route.js'
 import authRoute from './routes/authroute.js'
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors());
 mongoose.connect(process.env.MONGO).then(
     ()=>{
